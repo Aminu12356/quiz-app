@@ -1,38 +1,46 @@
-<!doctype html>
+ <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz App</title>
-  </head>
-  <body>
-    <div>
-      <!-- Welcome screen -->
-      <div>
-        <h1>Quiz<span>Quest</span></h1>
-        <p>Challenge yourself and test your knowledge!</p>
-        <button>Start Quiz</button>
-      </div>
-
-      <!-- Quiz screen -->
-      <div>
-        <div><span>Question 1 of 5</span> <span>Time: 15s</span></div>
-        <div>
-          <h2>Loading Question</h2>
-          <!-- Dynamically rendered button -->
-          <button>Next Question</button>
-        </div>
- 
-
-      </div>
-
-       <!-- Results screen -->
-        <div>
-          <h2>Quiz Results</h2>
-          <p>You scored 0 out of 5</p>
-
-          <p>Good effort, keep learning!</p>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizQuest — Interactive Quiz</title>
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <!-- WELCOME SCREEN -->
+    <div id="welcome-screen" class="screen">
+      <h1 class="logo">Quiz<span>Quest</span></h1>
+      <p class="tagline">Challenge yourself and test your knowledge!</p>
+      <button id="start-btn" class="btn">Start Quiz</button>
     </div>
-  </body>
+
+    <!-- QUIZ SCREEN -->
+    <div id="quiz-screen" class="screen hide">
+      <div class="quiz-header">
+        <span id="progress-text">Question 1 of 5</span>
+        <span id="timer">Time: 15s</span>
+      </div>
+      <div class="progress-bar-container">
+        <div id="progress-bar"></div>
+      </div>
+      <h2 id="question-text">Loading question...</h2>
+      <div id="options-container" class="options-grid">
+        <!-- Dynamically rendered buttons -->
+      </div>
+      <button id="next-btn" class="btn hide">Next Question →</button>
+    </div>
+
+    <!-- RESULTS SCREEN -->
+    <div id="results-screen" class="screen hide">
+      <h1 class="logo">Quiz<span>Results</span></h1>
+      <p id="score-text">You scored 0 out of 5!</p>
+      <p class="tagline">Good effort, keep learning!</p>
+      <button id="restart-btn" class="btn">Restart Quiz</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
